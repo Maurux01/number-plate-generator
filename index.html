@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA License Plate Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🇺🇸 USA License Plate Generator 🚘</h1>
+        
+        <div class="plate-container">
+            <div id="licensePlate" class="license-plate california">
+                <div class="state">CALIFORNIA</div>
+                <div class="plate-number">7ABC123</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="generatePlate()">Generate New Plate</button>
+            <button onclick="toggleStateDesign()">Change State</button>
+            <button onclick="downloadPlate()">Download Plate</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
