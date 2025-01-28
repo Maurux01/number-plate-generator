@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USA License Plate Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Colombian License Plate Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🇺🇸 USA License Plate Generator 🚘</h1>
-        
-      <!-- Basic structure -->
-<div class="plate">
-    <!-- Optional EU stars element (needs content/styling) -->
-    <div class="eu-stars"></div>
-    
-    <!-- Main license number -->
-    <div class="numbers">ABC 123</div>
-    
-    <!-- Regional code (positioned absolutely) -->
-    <div class="region">YOUR-REGION</div>
-</div>
-
-<!-- Example with typical German-style plate elements -->
-<div class="plate">
-    <div class="eu-stars">★★★★★</div> <!-- Optional stars -->
-    <div class="numbers">M AA 1234</div>
-    <div class="region">BERLIN</div>
-</div>
-        <div class="controls">
-            <button onclick="generatePlate()">Generate New Plate</button>
-            <button onclick="toggleStateDesign()">Change State</button>
-            <button onclick="downloadPlate()">Download Plate</button>
+    <div class="plate-container">
+        <div class="license-plate">
+            <div class="plate-left">
+                <div class="region">COLOMBIA</div>
+                <div class="plate-content">
+                    <span class="letters">ABC</span>
+                    <span class="hyphen">-</span>
+                    <span class="numbers">123</span>
+                </div>
+            </div>
+            <div class="plate-right">
+                <div class="seal"></div>
+            </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <div class="controls">
+        <input type="text" id="letters" maxlength="3" placeholder="AAA" pattern="[A-Za-z]{3}">
+        <input type="number" id="numbers" maxlength="3" placeholder="123">
+        <button onclick="generatePlate()">Generar Placa</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
