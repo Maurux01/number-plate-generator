@@ -1,33 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colombian License Plate Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="plate-container">
-        <div class="license-plate">
-            <div class="plate-left">
-                <div class="region">COLOMBIA</div>
-                <div class="plate-content">
-                    <span class="letters">ABC</span>
-                    <span class="hyphen">-</span>
-                    <span class="numbers">123</span>
-                </div>
-            </div>
-            <div class="plate-right">
-                <div class="seal"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="controls">
-        <input type="text" id="letters" maxlength="3" placeholder="AAA" pattern="[A-Za-z]{3}">
-        <input type="number" id="numbers" maxlength="3" placeholder="123">
-        <button onclick="generatePlate()">Generar Placa</button>
-    </div>
+    <div class="plate" id="plate">AGH430 STFEDEBOGOTA-</div>
+    <button id="generateBtn">Generate</button>
 
     <script src="script.js"></script>
 </body>
