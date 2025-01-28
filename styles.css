@@ -13,7 +13,7 @@ body {
 }
 
 .plate {
-  width: 320px;
+  width: 330px;
   height: 160px;
   background-color: #fce94f;
   border: 4px solid #000;
@@ -31,13 +31,14 @@ body {
   font-size: 1rem;
   font-weight: bold;
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   color: #000;
+  text-transform: uppercase;
 }
 
 .plate .code {
   font-size: 2.5rem;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "License Plate", "Courier New", Courier, monospace;
   font-weight: bold;
   color: #000;
   letter-spacing: 0.2rem;
