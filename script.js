@@ -1,9 +1,9 @@
 const cities = [
-  "Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", 
-  "Bucaramanga", "Pereira", "Manizales", "Santa Marta", 
-  "Cúcuta", "Armenia", "Villavicencio", "Ibagué", "Neiva",
-  "Popayán", "Montería", "Sincelejo", "Valledupar", "Tunja",
-  "Pasto"
+  "BOGOTA D.C.", "MEDELLIN", "CALI", "BARRANQUILLA", "CARTAGENA", 
+  "BUCARAMANGA", "PEREIRA", "MANIZALES", "SANTA MARTA", 
+  "CUCUTA", "ARMENIA", "VILLAVICENCIO", "IBAGUE", "NEIVA",
+  "POPAYAN", "MONTERIA", "SINCELEJO", "VALLEDUPAR", "TUNJA",
+  "PASTO"
 ];
 
 function getRandomCity() {
