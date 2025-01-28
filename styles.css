@@ -1,217 +1,51 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Abril+Fatface&display=swap');
+/* Replace existing styles with this CSS */
+.plate {
+    background: linear-gradient(to bottom, #ececec, #d3d3d3);
+    border: 3px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-:root {
-    --plate-gold: #FFD700;
-    --plate-blue: #002366;
-    --plate-red: #BF0A30;
-    --plate-orange: #FF6600;
+.numbers {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.region {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-weight: bold;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f0f0f0, #c0c0c0);
-    min-height: 100vh;
-    margin: 0;
+    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.plate-container {
-    background: #d0d0d0;
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.plate-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.1) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.1) 50%,
-        rgba(255, 255, 255, 0.1) 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 4px 4px;
-    transform: rotate(45deg);
-    opacity: 0.3;
-}
-
-.license-plate {
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    border-radius: 12px;
-    font-size: 2.8rem;
-    position: relative;
-    text-transform: uppercase;
-    border: 4px solid;
-    transition: transform 0.3s ease;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3),
-                -1px -1px 1px rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1),
-                0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.license-plate:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(2deg);
-}
-
-.state {
-    font-size: 1.4rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    position: relative;
-    display: inline-block;
-    padding: 0 1rem;
-}
-
-/* California Style */
-.california {
-    background: linear-gradient(160deg, #003366 0%, #0066CC 100%);
-    color: #FFFFFF;
-    border-color: var(--plate-gold);
-    font-family: 'Dancing Script', cursive;
-}
-
-.california .state {
-    font-family: 'Abril Fatface', cursive;
-    color: var(--plate-gold);
-    font-size: 1.8rem;
-}
-
-.california .state::after {
-    content: "✸";
-    margin-left: 10px;
-    color: var(--plate-gold);
-}
-
-/* Texas Style */
-.texas {
-    background: linear-gradient(to right, #BF0A30 0%, #002868 100%);
-    color: white;
-    border-color: #FFFFFF;
-    font-family: 'Arial Black', sans-serif;
-}
-
-.texas .state::before {
-    content: "★ ";
-    color: white;
-    font-size: 1.8rem;
-}
-
-/* New York Style */
-.new-york {
-    background: linear-gradient(to bottom, #FFFFFF 0%, #F0F0F0 100%);
-    color: var(--plate-blue);
-    border-color: var(--plate-red);
-    font-family: 'Arial Narrow', sans-serif;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.new-york .state {
-    color: var(--plate-red);
-    font-weight: 900;
-    text-transform: uppercase;
-    border-bottom: 3px solid var(--plate-red);
-}
-
-/* Florida Style */
-.florida {
-    background: linear-gradient(to bottom, #FF9900 0%, #FF6600 100%);
-    color: var(--plate-blue);
-    border-color: #FF3300;
-    font-family: 'Trebuchet MS', sans-serif;
-}
-
-.florida .state {
-    color: var(--plate-blue);
-    font-weight: 900;
-}
-
-.florida .state::after {
-    content: "☀️";
-    margin-left: 10px;
-}
-
-.plate-number {
-    letter-spacing: 3px;
-    position: relative;
-    z-index: 1;
-}
-
-.controls {
-    display: flex;
-    gap: 1.5rem;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 3rem 0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
-button {
-    background: linear-gradient(to bottom, #2c3e50, #34495e);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-button::before {
-    content: '';
+/* Optional: Add EU stars styling if needed */
+.eu-stars {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-button:hover::before {
-    left: 100%;
-}
-
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #003399;
 }
