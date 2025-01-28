@@ -1,68 +1,28 @@
-const plate = document.getElementById('licensePlate');
-const states = [
-    { name: 'CALIFORNIA', class: 'california', format: 'number' },
-    { name: 'TEXAS', class: 'texas', format: 'dash' },
-    { name: 'NEW YORK', class: 'new-york', format: 'space' },
-    { name: 'FLORIDA', class: 'florida', format: 'custom' }
-];
-
-let currentStateIndex = 0;
-
 function generatePlate() {
-    const state = states[currentStateIndex];
-    plate.className = `license-plate ${state.class}`;
+    const lettersInput = document.getElementById('letters');
+    const numbersInput = document.getElementById('numbers');
     
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numbers = '0123456789';
+    // Get and format values
+    let letters = lettersInput.value.toUpperCase().substring(0, 3);
+    let numbers = numbersInput.value.substring(0, 3);
     
-    let plateNumber = '';
-    switch(state.format) {
-        case 'number':
-            // California format: 1ABC123
-            plateNumber = `${randomChar(numbers)}${randomString(letters, 3)}${randomString(numbers, 3)}`;
-            break;
-        case 'dash':
-            // Texas format: ABC-1234
-            plateNumber = `${randomString(letters, 3)}-${randomString(numbers, 4)}`;
-            break;
-        case 'space':
-            // New York format: ABC 1234
-            plateNumber = `${randomString(letters, 3)} ${randomString(numbers, 4)}`;
-            break;
-        case 'custom':
-            // Florida format: A12 3BC
-            plateNumber = `${randomChar(letters)}${randomString(numbers, 2)} ${randomString(numbers, 1)}${randomString(letters, 2)}`;
-            break;
-    }
+    // Pad numbers with leading zeros if necessary
+    numbers = numbers.padStart(3, '0');
     
-    plate.innerHTML = `
-        <div class="state">${state.name}</div>
-        <div class="plate-number">${plateNumber}</div>
-    `;
+    // Update display
+    document.querySelector('.letters').textContent = letters;
+    document.querySelector('.numbers').textContent = numbers;
+    
+    // Clear inputs
+    lettersInput.value = '';
+    numbersInput.value = '';
 }
 
-function toggleStateDesign() {
-    currentStateIndex = (currentStateIndex + 1) % states.length;
-    generatePlate();
-}
+// Input validation
+document.getElementById('letters').addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
+});
 
-function downloadPlate() {
-    html2canvas(plate).then(canvas => {
-        const link = document.createElement('a');
-        link.download = `usa_plate_${new Date().getTime()}.png`;
-        link.href = canvas.toDataURL();
-        link.click();
-    });
-}
-
-// Helper functions
-function randomString(chars, length) {
-    return Array.from({length}, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-}
-
-function randomChar(chars) {
-    return chars[Math.floor(Math.random() * chars.length)];
-}
-
-// Initial generation
-generatePlate();
+document.getElementById('numbers').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\D/g, '').substring(0, 3);
+});
