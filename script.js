@@ -1,28 +1,24 @@
-document.getElementById('generateBtn').addEventListener('click', generatePlate);
+const cities = [
+  "Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", 
+  "Bucaramanga", "Pereira", "Manizales", "Santa Marta", 
+  "Cúcuta", "Armenia", "Villavicencio", "Ibagué", "Neiva",
+  "Popayán", "Montería", "Sincelejo", "Valledupar", "Tunja",
+  "Pasto"
+];
+
+function getRandomCity() {
+  return cities[Math.floor(Math.random() * cities.length)];
+}
+
+function getRandomCode() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const randomLetters = Array.from({ length: 3 }, () => letters.charAt(Math.floor(Math.random() * letters.length))).join('');
+  const randomNumbers = Array.from({ length: 3 }, () => numbers.charAt(Math.floor(Math.random() * numbers.length))).join('');
+  return `${randomLetters}-${randomNumbers}`;
+}
 
 function generatePlate() {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numbers = '0123456789';
-    const cities = ['BOGOTA', 'LONDON', 'BERLIN', 'MADRID', 'MOSCOW', 'DUBLIN', 'OTTAWA'];
-
-    // Generate first part
-    let firstPart = '';
-    for (let i = 0; i < 3; i++) {
-        firstPart += letters.charAt(Math.floor(Math.random() * letters.length));
-    }
-    for (let i = 0; i < 3; i++) {
-        firstPart += numbers.charAt(Math.floor(Math.random() * numbers.length));
-    }
-
-    // Generate second part
-    let randomLetters = '';
-    for (let i = 0; i < 6; i++) {
-        randomLetters += letters.charAt(Math.floor(Math.random() * letters.length));
-    }
-    
-    const randomCity = cities[Math.floor(Math.random() * cities.length)];
-    const secondPart = randomLetters + randomCity + '-';
-
-    // Update display
-    document.getElementById('plate').textContent = `${firstPart} ${secondPart}`;
+  document.getElementById("city").textContent = getRandomCity();
+  document.getElementById("code").textContent = getRandomCode();
 }
