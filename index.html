@@ -10,13 +10,24 @@
     <div class="container">
         <h1>🇺🇸 USA License Plate Generator 🚘</h1>
         
-        <div class="plate-container">
-            <div id="licensePlate" class="license-plate california">
-                <div class="state">CALIFORNIA</div>
-                <div class="plate-number">7ABC123</div>
-            </div>
-        </div>
+      <!-- Basic structure -->
+<div class="plate">
+    <!-- Optional EU stars element (needs content/styling) -->
+    <div class="eu-stars"></div>
+    
+    <!-- Main license number -->
+    <div class="numbers">ABC 123</div>
+    
+    <!-- Regional code (positioned absolutely) -->
+    <div class="region">YOUR-REGION</div>
+</div>
 
+<!-- Example with typical German-style plate elements -->
+<div class="plate">
+    <div class="eu-stars">★★★★★</div> <!-- Optional stars -->
+    <div class="numbers">M AA 1234</div>
+    <div class="region">BERLIN</div>
+</div>
         <div class="controls">
             <button onclick="generatePlate()">Generate New Plate</button>
             <button onclick="toggleStateDesign()">Change State</button>
